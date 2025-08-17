@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="styles.css"rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+      <title>Product landing page</title>
+    <style>
+    :root{--bg-color1:#315e26;  
+  --color2:#f8f8ff;
+  --color3:#d9f2d9;
+  --color4:#2e4d2e;
+  --color5:#315e26;
+  }
+@media (max-width: 600px) {
+    /* Mobile layout styles here */
+    .container{grid-template-columns: 1fr;}
+    #header{grid-column:1/-1;
+      grid-row: 1;
+      
+    }
+    .header-div{display:flex;
+    flex-direction:column;justify-content:space-evenly;}
+    .header-logo{font-size:2rem;
+    }
+    nav ul li{display:block;}
+    
+    nav a{display:block;}
+    .search-div{flex-flow: row wrap;}
+    .search-title{font-size: 0.5rem;}
+    .products-div{flex-flow:column wrap;}
+}
+@media (min-width: 768px) {
+    /* Desktop layout styles here */.header-div{display:grid;
+    grid-template-columns:repeat(10,1fr);
+    grid-template-rows:1fr;
+    position:sticky;
+    top:0;
+    left:0;
+    z-index:100;
+    }
+    .header-logo{grid-row:1/-1;
+    grid-column:1/3;
+    text-align:center;
+    }
+    .header-nav {grid-row:1/-1;
+    grid-column:5/11;}
+    nav ul {display:flex;
+  justify-content:flex-end;align-items:center;
+    gap:10px;
+    border:none;
+    }
+    nav ul li {margin-top:0;
+    padding:10px;
+    border:none;}
+    header img{grid-row:1/-1;
+    grid-column:2/3;}
+}
+*{box-sizing:border-box;
+margin:0;
+padding:0;
+list-style-type:none;}
+html{scroll-behavior:smooth;}
+.container{display:grid;
+grid-template-columns:1fr 1fr;
+grid-template-rows:auto auto auto auto auto auto auto;}
+
+clearfloat::after{clear:both;
+display:table;
+content:"";}
+/*header style's */
+#header{ grid-column:1/-1;
+grid-row:1/2;
+}
+.header-div{background-color:var(--bg-color1);
+width:100%;
+color:var(--color2);
+padding:5px;
+font-family:Roboto;
+font-size:1rem;
+font-weight:bolder;
+}
+.header-logo{font-size:1.5rem;text-transform:capitalize;
+font-family:Google san code;
+padding:5px;
+margin:5px;
+text-align:center;
+text-shadow:-5px 5px 10px black;
+
+}
+.header-nav{padding:5px;
+text-align:center;
+margin:5px;
+text-transform:uppercase;
+}
+nav ul li {
+gap:20px;
+border:5px solid var(--color2);
+padding:5px;
+border-radius:10px;
+margin-top:10px;
+}
+.nav-link{color:var(--color2);
+text-decoration:none;
+text-shadow:2px 5px 5px black;}
+.nav-link:hover{color:black;
+text-decoration:overline;}
+header img {width:1%;
+height:1%;}
+/*search-section*/
+#search-section{grid-column:1/-1;
+grid-row:1/3;}
+.search-div{
+background-color:var(--color3);
+width:100vw;
+min-height:10vh;
+text-align:center;
+padding:5px;
+display:flex;
+flex-flow:column wrap;
+justify-content:space-evenly;
+align-items:center;
+font-family:Roboto;
+}
+.search-title{color:var(--color4);
+ padding:10px;
+ margin:5px;
+ margin-top:100px;
+ font-weight:bold;
+font-size:2rem;
+ }
+ .search-mg{color:var(--color4);
+ padding:10px;
+ margin:10px;
+ margin-bottom:50px;
+ font-weight:lighter;
+ font-size:1rem;
+ transition: transform 0.5s;
+ }
+ .search-mg:hover{transform:scale(1.5);
+ }
+ input[type="text"]{background-color: var(--color2);
+width:70vw;
+height: 60px;
+border:5px solid black;
+padding:5px;
+margin: 5px;
+margin-bottom: 100px;
+border-radius: 10px;
+text-align: center;}
+.btn-1{color:var(--color2);
+background-color: black;
+width: 150px;
+height: 60px;
+padding: 5px;
+margin-bottom: 150px;
+border-radius: 10px;}
+ #facilities-section{grid-column:1/-1;
+   grid-row: 3/4;
+ }
+  .facilities-div{width:100vw;
+    min-height: 20vh;
+    background-color: var(--color4);
+    color: var(--color2);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: justify;
+    text-shadow:5px 5px 5px black;
+  } .facilities-div h2{font-weight:bolder;
+    padding: 5px;
+    margin: 5px;
+    margin-left: 15px;
+    text-decoration: overline;
+  } .facilities-div p{font-weight:bold;
+    margin: 5px;
+    margin-left: 16px;
+  }
+  #review-section{grid-column: 1/-1;
+  grid-row: 4/5;}
+  .review-div{min-height: 20vh;
+  width: 100vw;
+  background-color: var(--color4);
+  color: var(--color2);
+    text-align: center;
+    padding-left: 20px;
+    padding: 4px;
+    text-shadow:5px 5px 5px black;}
+    .review-div h3{text-decoration: overline;
+    font-family:Roboto;
+    font-size: 1.5rem;
+    padding: 15px;
+    margin: 15px;
+    }
+ .review-div ul li {list-style-type:square;
+   padding: 5px;
+   margin:5px;
+ }
+ .review-div ul li a {text-decoration: none;
+ color:var(--color2);}
+ .review-div ul li a:hover{color:blue;
+ text-decoration: line-through;}
+ video{width:200px;
+ height:200px;}
+ .products-section{grid-column:1/-1;
+ grid-row: 5/6;}
+ .products-div{width:100vw;
+   min-height: 10vh;
+   color: var(--color2);
+   background-color: var(--color4);
+   display: flex;
+   flex-grow: row wrap;
+   justify-content: space-evenly;
+   align-items: center;
+   padding: 10px;
+ } .products{padding:10px;
+   margin: 10px;
+   border: 5px solid black;
+   box-shadow: 5px 5px 5px white;
+   width:300px;
+   min-height: 200px;
+   padding-bottom: 15px;
+ } .products img{ height:100px;
+   width:100px;
+ } .products h3{padding:10px;
+   font-size: 1.5rem;
+   font-family: Roboto;
+ } .products p {padding:10px;
+   margin:5px;
+   font-size: 1rem;
+ } .products h4 {font-size:1.5rem;
+   font-weight:bolder;
+ } .products span{font-size:1.8rem;}
+ .products button{padding:10px;
+ text-align: center;
+   border:2px solid transparent;
+   box-shadow: 5px 5px 4px black;
+ }
+ /* Contact Section placed in first column of grid */
+#contact-section {
+    grid-column: 1 / -1; 
+    grid-row: 6/7;  
+}
+
+.contact-div {
+    width: 100vw;
+    height: 18vh;
+    background-color: var(--color4); /* Make sure this variable exists */
+    color: var(--color2); /* Make sure this variable exists */
+    padding:20px;
+    padding-top:10px;
+    font-size: 2rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+} #registration-section{grid-column:1/-1;
+  grid-row:7/8;
+}
+.registration-div {width: 100vw;
+    height: 10vh;
+    background-color: var(--color4); /* Make sure this variable exists */
+    color: var(--color2); /* Make sure this variable exists */
+    padding:20px;
+    padding-left:40px;
+    font-size: 2rem;
+  display: block;
+  text-align:left;
+} label{font-size:3rem;
+  font-weight: bolder;
+} input{width:200px;
+  height:50px;
+  border:5px solid white;
+}
+    
+ 
+ </style>  
+      </head>
+      <body><div class="container">
+      <header id="header"><div class="header-div clearfloat"><div class="header-logo">Green earth</div><div class="header-img"><img id="header-img"src="https://www.google.com/imgres?imgurl=https://static.vecteezy.com/system/resources/previews/017/262/761/non_2x/green-earth-abstract-leaf-world-emblem-logo-design-vector.jpg&tbnid=cbmk30dPli8FBM&vet=1&imgrefurl=https://www.vecteezy.com/free-vector/green-earth-logo&docid=773x799EhZlFjM&w=1400&h=980&hl=en-GB&source=sh/x/im/m1/4&kgs=0fcaacaa4599ab42&shem=isst"></div><div class="header-nav"><nav id="nav-bar"><ul><li><a class="nav-link"href="#search-section">search</a></li><li><a class="nav-link"href="#priducts-section">Product's</a></li><li><a class="nav-link"href="#facilities-section">
+        Facilities</a></li><li><a class="nav-link"href="#review-section">Review</a></li><li><a class="nav-link"href="#contact-section">contact</a></li><li><a class="nav-link"href="#registar-section">Registar/login</a></li></ul></nav></div></div></header>
+    
+        <section id="search-section">
+            <div class="search-div clearfloat">
+                  <div class="search-title">
+                          <h1>Green Earth,Green Choices</h1> </div>
+       <div class="search-mg">
+                 <h3>Discover the best eco-friendly products made for a better future</h3>
+                       </div><div class="search-bar">
+                           <input type="text" name="products" placeholder="Explore the eco-friendly world" id="search"><br>
+                             <input type="submit" id="submit" class="btn-1">
+                             </div>                             </div>
+                                      </section>
+    <section id="facilities-section"><div class="facilities-div clearfloat"><h2>Fast Delivery</h2><p>We provide you best delivery service in all bangladesh at 24 hours.All are cash on delivery with exchange offer,also avaiable return offer.</p><br>
+    <br><h2>Green products</h2><p>We discover the all best eco-friendly products.Our pens books stationary material all are sustainable products.</p><br><br><h2>Best prices</h2><p>We provide our Product in best prices.Our all are productsv are reasonable. We maintain good quality always.</p></div></section> 
+    <section id="review-section"><div class="review-div clearfloat"><h3>See our customer review:</h3>
+    <ul><li><a href="#">Facebook Group</a></li><li><a href="#">Blogger Website</a></li><li>Youtube Review<br>
+    <video><a href="#"></a></video></li></ul>
+    </div></section><section id="products-section"><div class="products-div"><div class="products"><img src="#"alt="Pen Photo"><h3>Eco-friendly Pen</h3><p>Best in fast writinf with long lasting</p><h4>Price:<span>1$</span></h4><button>Order now</button></div><div class="products"><img src="#"alt="Pen Photo"><h3>Eco-friendly Pen</h3><p>Best in fast writinf with long lasting</p><h4>Price:<span>1$</span></h4><button>Order now</button></div><div class="products"><img src="#"alt="Pen Photo"><h3>Eco-friendly Pen</h3><p>Best in fast writinf with long lasting</p><h4>Price:<span>1$</span></h4><button>Order now</button></div><div class="products"><img src="#"alt="Pen Photo"><h3>Eco-friendly Pen</h3><p>Best in fast writinf with long lasting</p><h4>Price:<span>1$</span></h4><button>Order now</button></div></div></section>
+    <!-- Contact Section -->
+<section id="contact-section">
+    <div class="contact-div">
+        <h4>Website:</h4>
+        <p>This is our official website. We are available 24/7 hours.</p>
+
+        <h4>Social Media:</h4>
+        <p>Facebook, Instagram, Twitter, Gmail</p>
+
+        <h4>Office Address:</h4>
+        <p>House: 8, Road: 3/1, Block: D, Banasree, Rampura, Dhaka</p>
+    </div>
+</section>
+
+<!-- Registration Section -->
+<section id="registration-section">
+    <div class="registration-div">
+        <form id="form">
+            <label for="email">
+                Email:
+                <input type="email" id="email" name="email" placeholder="Enter your email address!" required>
+            </label><br>
+
+            <label for="password">
+                Password:
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </label><br>
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</section>
+    </div>
+    <footer></footer>
+        </body>
+        </html>
